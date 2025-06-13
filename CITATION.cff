@@ -22,10 +22,5 @@ preferred-citation:
     given-names: "Mike"
     orcid: "https://orcid.org/0000-0002-6513-1488"
   journal: "Journal Title"
-  # month: 9
-  # start: 1 # First page number
-  # end: 10 # Last page number
-  # title: "My awesome research software"
-  # issue: 1
-  # volume: 1
+  title: "A Simple Data-Driven Machine Learning-based Software Package for Accurate Magnetic Core Loss Computation"
   year: 2025
