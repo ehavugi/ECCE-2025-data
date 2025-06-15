@@ -21,6 +21,7 @@ preferred-citation:
   - family-names: "Ranjram"
     given-names: "Mike"
     orcid: "https://orcid.org/0000-0002-6513-1488"
-  journal: "Journal Title"
+  journal: "2025 IEEE Energy Conversion Congress and Exposition (ECCE)"
   title: "A Simple Data-Driven Machine Learning-based Software Package for Accurate Magnetic Core Loss Computation"
+  month: 10
   year: 2025
