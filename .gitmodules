@@ -7,3 +7,6 @@
 [submodule "src/inference/magnet"]
 	path = src/inference/magnet
 	url = https://github.com/ehavugi/magnet
+[submodule "src/inference/html"]
+	path = src/inference/html
+	url = git@github.com:havugimana/havugimana.github.io.git
