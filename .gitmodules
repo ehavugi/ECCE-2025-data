@@ -1,0 +1,3 @@
+[submodule "src/inference/magnet-engine"]
+	path = src/inference/magnet-engine
+	url = https://github.com/ehavugi/magnet-engine
