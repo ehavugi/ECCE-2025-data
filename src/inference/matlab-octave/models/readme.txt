@@ -1,0 +1,1 @@
+More rotational invariant version for the materials with more data

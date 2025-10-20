@@ -1,0 +1,12 @@
+[submodule "src/inference/magnet-engine"]
+	path = src/inference/magnet-engine
+	url = https://github.com/ehavugi/magnet-engine
+[submodule "src/inference/mag-net-hub"]
+	path = src/inference/mag-net-hub
+	url = https://github.com/ehavugi/mag-net-hub
+[submodule "src/inference/magnet"]
+	path = src/inference/magnet
+	url = https://github.com/ehavugi/magnet
+[submodule "src/inference/html"]
+	path = src/inference/html
+	url = git@github.com:havugimana/havugimana.github.io.git
