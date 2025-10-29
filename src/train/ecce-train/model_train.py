@@ -12,12 +12,12 @@ pretrained=["",
             "3F4"
             ]
 pretrain = st.selectbox(
-            f'pretrained-models:',
+            f'pretrained-models(a model to transfer learn from):',
             pretrained,
             index=1,
             key=f'material {pretrained}',
             help='select from a list of pretrained  models')
-patience= st.slider("patience", 0,1000, 50)
+patience= st.slider("patience \n (Number of epochs to wait without improvements)", 0,1000, 50)
 
 from ecce2025 import main_pd
 uploaded_files = st.file_uploader(
@@ -37,24 +37,36 @@ for uploaded_file in uploaded_files:
 
 print(pretrain)
 st.write(pretrain)
-x,fileout, fileout2=main_pd(dataReady["B"],dataReady['F'],
-            dataReady['T'],dataReady['VL'],pretrain,
-            patience=patience)
-st.write(x)
+trainable=False
+try:
+        
+    x,fileout, fileout2=main_pd(dataReady["B"],dataReady['F'],
+                dataReady['T'],dataReady['VL'],pretrain,
+                patience=patience)
+    st.write(x)
+    trainable=True
+except Exception as e:
+    st.write("Please upload  data in same format as  \n https://github.com/ehavugi/ECCE-2025-data/tree/main/resampled/3C94")
 
-with open(fileout, "rb") as fp:
-    btn = st.download_button(
-        label="Download trained model (SD)",
-        data=fp,
-        file_name="model.sd" # Any file name
-    )
 
-with open(fileout2, "rb") as fp:
-    btn = st.download_button(
-        label="Download trained model(XLSX)",
-        data=fp,
-        file_name=fileout2 # Any file name
-    )
-    # st.download_button('Download file', x)  # Defaults to 'application/octet-stream'
-# else:
-#     st.write("Upload data:  ", data)
+if trainable:
+    try:
+        with open(fileout, "rb") as fp:
+            btn = st.download_button(
+                label="Download trained model (SD)",
+                data=fp,
+                file_name="model.sd" # Any file name
+            )
+    except:
+        st.write("Error while generating model.sd")
+    try:
+        with open(fileout2, "rb") as fp:
+            btn = st.download_button(
+                label="Download trained model(XLSX)",
+                data=fp,
+                file_name=fileout2 # Any file name
+            )
+            # st.download_button('Download file', x)  # Defaults to 'application/octet-stream'
+    except:
+        st.write("Error while generating xlsx model format")
+    #     st.write("Upload data:  ", data)
