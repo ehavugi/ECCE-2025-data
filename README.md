@@ -17,7 +17,7 @@ Data Related to ECCE 2025 paper on coreloss prediction
 		+ magnet-engine (github linked)
 		+ google sheet -- [url](https://docs.google.com/spreadsheets/d/1InZxrOcYHm_Bny3OXg_GkX3djftPdBD3V_gSehEbdrQ/edit?usp=sharing)
 	+ training
-		+ ecce train
+		+ ecce train :(deployed at) [https://ecce-2025-data.streamlit.app/](https://ecce-2025-data.streamlit.app/)
 		+ magnet challenge train
 		+ 
 	+ main.py
