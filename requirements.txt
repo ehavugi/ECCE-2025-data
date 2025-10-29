@@ -1,1 +1,9 @@
 cffconvert
+torch
+numpy
+pandas
+scipy
+streamlit
+openpyxl
+matplotlib
+scikit-learn
