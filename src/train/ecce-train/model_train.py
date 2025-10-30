@@ -42,7 +42,7 @@ try:
         
     x,fileout, fileout2=main_pd(dataReady["B"],dataReady['F'],
                 dataReady['T'],dataReady['VL'],pretrain,
-                patience=patience)
+                patience=patience,base_excel="src/train/ecce-train/base.xlsx")
     st.write(x)
     trainable=True
 except Exception as e:

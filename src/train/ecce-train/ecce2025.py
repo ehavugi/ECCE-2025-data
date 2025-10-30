@@ -245,7 +245,8 @@ def get_dataset_pds(B,F,T,VL):
 
 # Config the model training
 
-def main_pd(B,Freq,T,VL,pretrainer="N87",pretrain=True,patience=50,hyper={}):
+def main_pd(B,Freq,T,VL,pretrainer="N87",pretrain=True,
+    patience=50,hyper={}, base_excel="base.xlsx"):
     """
     Train and test sequence for a single material.
     """
@@ -412,7 +413,7 @@ def main_pd(B,Freq,T,VL,pretrainer="N87",pretrain=True,patience=50,hyper={}):
 
     # myworkbook=openpyxl.create_sheet(f"{logpath}/{material}/model.xlsx")
     # myworkbook=openpyxl.Workbook()
-    myworkbook=openpyxl.load_workbook("base.xlsx")
+    myworkbook=openpyxl.load_workbook(base_excel)
     worksheet= myworkbook.get_sheet_by_name("CoreLoss")
     sheet = worksheet
     sheet.cell(row=1, column=3).value = "Material XX"
@@ -496,7 +497,7 @@ def modelRUN():
 
     # Config the model training
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    data=None
+    data=None 
     pretrainer=""
 
     pretrain = False
@@ -510,16 +511,16 @@ def modelRUN():
           if not isExist:
               os.mkdir(logpath)
           for material in materials:
-              main(material,pretrainer)
+              main_pd(material,pretrainer)
               print(materials)
     else:
         for material in materials:
-              main(material,pretrainer)
+              main_pd(material,pretrainer)
               print(materials)
 
 
 if __name__ == "__main__":
     # shutil.copyfile(__file__, '{}/model.py'.format(logpath))
-    # modelRUN()
+    modelRUN()
     pass
 
